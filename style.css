@@ -1,0 +1,58 @@
+/* Importing the 'Roboto' font family from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Setting box-sizing to border-box for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Styling the body of the page */
+body {
+  background-color: #000; /* Setting the background color to black */
+  font-family: 'Roboto', sans-serif; /* Applying the Roboto font */
+  display: flex; /* Using flexbox layout */
+  flex-direction: column; /* Aligning items vertically */
+  align-items: center; /* Centering items horizontally */
+  justify-content: center; /* Centering items vertically */
+  height: 100vh; /* Setting the height to the full viewport height */
+  overflow: hidden; /* Hiding any overflow content */
+  margin: 0; /* Removing default margin */
+}
+
+/* Styling the button */
+button {
+  background-color: purple; /* Setting the button background to purple */
+  color: #fff; /* Setting the text color to white */
+  border: 1px purple solid; /* Adding a purple border */
+  font-size: 14px; /* Setting the font size */
+  text-transform: uppercase; /* Converting text to uppercase */
+  letter-spacing: 2px; /* Adding letter spacing */
+  padding: 20px 30px; /* Adding padding inside the button */
+  overflow: hidden; /* Hiding overflow content */
+  margin: 10px 0; /* Adding margin above and below the button */
+  position: relative; /* Setting the position to relative for ripple effect */
+}
+
+/* Removing the outline when the button is focused */
+button:focus {
+  outline: none;
+}
+
+/* Styling the ripple effect (the circle) */
+button .circle {
+  position: absolute; /* Positioning the circle absolutely inside the button */
+  background-color: #fff; /* Setting the circle color to white */
+  width: 100px; /* Setting the width of the circle */
+  height: 100px; /* Setting the height of the circle */
+  border-radius: 50%; /* Making the circle round */
+  transform: translate(-50%, -50%) scale(0); /* Centering and shrinking the circle */
+  animation: scale 0.5s ease-out; /* Adding an animation for scaling the circle */
+}
+
+/* Defining the scale animation */
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3); /* Scaling the circle up */
+    opacity: 0; /* Fading the circle out */
+  }
+}
